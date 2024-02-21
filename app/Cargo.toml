@@ -1,0 +1,23 @@
+[package]
+name = "gpu-fuel-crypto-app"
+version = "0.1.0"
+publish = false
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[features]
+default = ["use-compiled-tools"]
+use-installed-tools = ["spirv-builder/use-installed-tools"]
+use-compiled-tools = ["spirv-builder/use-compiled-tools"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+futures = { version = "0.3", default-features = false, features = ["std", "executor"] }
+# Vulkan SDK or MoltenVK needs to be installed for `vulkan-portability` to work on macOS
+wgpu = { version = "0.18.0", features = ["spirv", "vulkan-portability"] }
+bytemuck = "1.6.3"
+fuel-crypto-shared = { path = "../shared" }
+env_logger = "0.11.0"
+spirv-builder = { workspace = true, features = ["watch"] }
+rayon = "1.5"
