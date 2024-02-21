@@ -16,6 +16,14 @@ To run the project, use:
 cargo run --release -p gpu-fuel-crypto-app
 ```
 
+You should see something similar to the following output.
+
+```
+GPU Compute Shader: 3.382959ms
+Rayon Parallel: 24.27075ms
+Sequential: 196.673292ms
+```
+
 ## Code Structure
 
 There are 3 crates in this repo:
