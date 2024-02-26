@@ -1,6 +1,10 @@
 [workspace]
 resolver = "2"
-members = ["app", "shader", "shared"]
+members = [
+    "app", "shader", "shared", 
+# "test_secp256k1",
+"test_k256"
+]
 
 [workspace.package]
 version = "0.1.0"

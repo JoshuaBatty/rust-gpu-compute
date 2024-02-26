@@ -20,7 +20,4 @@ pub fn collatz(mut n: u32) -> Option<u32> {
         i += 1;
     }
     Some(i)
-
-    // n = n + 2;
-    // Some(n)
 }
